@@ -1,0 +1,124 @@
+<!-- coding:utf-8 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BookSort</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'sort/style.css' %}">
+</head>
+<body>
+    <hr style="border:10px solid #58402a87;">
+    <div class="top">
+        <a href="../">
+            <p>Book Sorting</p>
+        </a>
+    </div>
+    <!-- <div class="sort_button">
+        <span>
+            <strong> Genre: </strong>
+            <a href="/Biography/sortByrating/"> Biography </a> / 
+            <a href="/Fiction/sortByrating/"> Fiction </a> / 
+            <a href="/Classics/sortByrating/"> Classics </a>
+        </span>
+        <p>
+            <strong>Order by:</strong>
+            <a href="../sortByrating/"> Rating </a> / 
+            <a href="../sortByratingsCount/"> Rating Count </a> /
+            <a href="../sortBypublishYear/"> Publish Year </a>
+        </p>
+    </div> -->
+    <!-- <HR style="border:3 double " width="100%" color=#987cb9 SIZE=3> -->
+    <hr>
+    <div class="main">
+        <p><a href="/Biography/sortByrating/">Biography</a></p>
+        <div id="demo">
+            <div id="indemo">
+                <div id="demo1">
+                    {% for i in BookList.biography %}
+                        <a href="{{i.link}}">
+                            <img src={{i.img_url}} title="{{i.title}}" alt="{{i.title}}">
+                        </a>
+                    {% endfor %}
+                </div>
+                <div id="demo2"></div>
+            </div>
+        </div>
+        <p><a href="/Fiction/sortByrating/">Fiction</a></p>
+        <div id="demo_2">
+            <div id="indemo2">
+                <div id="demo3">
+                    {% for i in BookList.fiction %}
+                        <a href="{{i.link}}">
+                            <img src={{i.img_url}} title="{{i.title}}" alt="{{i.title}}">
+                        </a>
+                    {% endfor %}
+                </div>
+                <div id="demo4"></div>
+            </div>
+        </div>
+        <p><a href="/Classics/sortByrating/">Classics</a></p>
+        <div id="demo_3">
+            <div id="indemo3">
+                <div id="demo5">
+                    {% for i in BookList.classics %}
+                        <a href="{{i.link}}">
+                            <img src={{i.img_url}} title="{{i.title}}" alt="{{i.title}}">
+                        </a>
+                    {% endfor %}
+                </div>
+                <div id="demo6"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright@2018, Wei Ma, All Rights Reserved.<p>
+    </div>
+</body>
+<script>
+    var speed=13;
+    var speed2=18;
+    var speed3=10;
+    var tab=document.getElementById("demo");
+    var tab_1=document.getElementById("demo_2");
+    var tab_2=document.getElementById("demo_3");
+    var tab1=document.getElementById("demo1");
+    var tab2=document.getElementById("demo2");
+    var tab3=document.getElementById("demo3");
+    var tab4=document.getElementById("demo4");
+    var tab5=document.getElementById("demo5");
+    var tab6=document.getElementById("demo6");
+    tab2.innerHTML=tab1.innerHTML;
+    tab4.innerHTML=tab3.innerHTML;
+    tab6.innerHTML=tab5.innerHTML;
+    function Marquee(){
+        if(tab1.offsetWidth-tab.scrollLeft<=0)
+            tab.scrollLeft=tab.scrollLeft-tab1.offsetWidth
+        else{
+            tab.scrollLeft++;
+        }
+    }
+    function Marquee2(){
+        if(tab3.offsetWidth-tab_1.scrollLeft<=0)
+            tab_1.scrollLeft=tab_1.scrollLeft-tab3.offsetWidth
+        else{
+            tab_1.scrollLeft++;
+        }
+    }
+    function Marquee3(){
+        if(tab5.offsetWidth-tab_2.scrollLeft<=0)
+            tab_2.scrollLeft=tab_2.scrollLeft-tab5.offsetWidth
+        else{
+            tab_2.scrollLeft++;
+        }
+    }
+    var MyMar=setInterval(Marquee,speed);
+    tab.onmouseover=function() {clearInterval(MyMar)};
+    tab.onmouseout=function() {MyMar=setInterval(Marquee,speed)};
+    var MyMar2=setInterval(Marquee2,speed2);
+    tab_1.onmouseover=function() {clearInterval(MyMar2)};
+    tab_1.onmouseout=function() {MyMar2=setInterval(Marquee2,speed2)};
+    var MyMar3=setInterval(Marquee3,speed3);
+    tab_2.onmouseover=function() {clearInterval(MyMar3)};
+    tab_2.onmouseout=function() {MyMar3=setInterval(Marquee3,speed3)};
+</script>
+</html>

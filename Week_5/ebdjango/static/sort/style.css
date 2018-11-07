@@ -1,0 +1,150 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: #3377aa;
+	font-weight: 400px;
+}
+i {
+	font-style: normal;
+}
+img {
+	width: 150px;
+	height: 220px;
+}
+.top {
+	height: 75px;
+	background-color: #e9e9e2;
+	line-height: 75px;
+}
+.top p {
+	font-size: 28px;
+	color: #58402a;
+	font-weight: 700;
+	text-align: center;
+	margin: auto;
+}
+.sort_button {
+	height: 30px;
+	line-height: 30px;
+	background-color: #d8d8c9;
+	padding-right: 30px;
+}
+.sort_button p {
+	text-align: right;
+	margin: auto;
+	color: #58402a;
+}
+.sort_button span {
+	float: left;
+	margin-left: 30px;
+	color: #58402a;
+}
+
+.main {
+	background-color: #f7f7f7;
+}
+.main em {
+	display: block;
+	text-align: center;
+	margin-bottom: 15px;
+	font-size: 14px;
+	color: #999;
+}
+.sort_list {
+	width: 800px;
+	margin: auto;
+	padding: 15px 15px 0px;
+}
+.sort_list ol {
+	margin: 0px 15px;
+	list-style: none;
+	counter-reset: li;
+}
+.sort_list li {
+	/*border-bottom: 1px dashed #ddd;*/
+	height: 250px;
+	color: #666;
+	font-size: 16px;
+	padding: 10px;
+	position: relative;
+	counter-increment: li;
+}
+.sort_list li::before {
+	content: counter(li);
+    color: #583d30;
+    display: inline-block;
+    width: 1em;
+    margin-left: -2em;
+    margin-top: 3.5em;
+    font-size: 30px;
+    font-weight: 700;
+}
+.sort_list li:nth-child(odd) {
+	background-color: #fff;
+}
+
+.title {
+	color: #583d30;
+	font-weight: 700;
+	font-size: 18px;
+}
+.author {
+	font-style: italic;
+	color: #666;
+}
+
+.book_cover {
+	display: inline-block;
+	position: absolute;
+	top: 25px;
+	left: 15px;
+}
+.book_info {
+	display: inline-block;
+	position: absolute;
+	top: 25px;
+	left: 180px;
+}
+
+.book_list table {
+	width: 800px;
+	margin: auto;
+	padding: 30px;
+}
+.book_list table .row1 {
+	background: linear-gradient(to bottom, #f7f7f7, #e5e5d5);
+}
+.book_list table .row2 {
+	background: linear-gradient(to top, #f7f7f7, #e5e5d5);
+}
+.book_list table td {
+	width: 200px;
+	height: 300px;
+	text-align: center;
+}
+
+.load_more {
+    height: 65px;
+}
+.load_more strong {
+	font-family: Georgia,serif;
+    width: 320px;
+    margin: 0 auto;
+	display: block;
+	background-color: #857866;
+    color: #fff;
+    text-align: center;
+    border-radius: 90px;
+    font-size: 28px;
+    padding: 5px 0;
+}
+.footer {
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	color: #999;
+	font-size: 12px;
+}

@@ -1,0 +1,58 @@
+<!-- coding:utf-8 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BookSort</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'sort/style.css' %}">
+</head>
+<body>
+	<div class="top">
+		<a href="../">
+			<p>Book Sorting</p>
+		</a>
+	</div>
+	<div class="sort_button">
+		<span>
+			<strong> Tag: </strong>
+			<a href="#"> Biography </a>
+		</span>
+		<p>
+			<strong>Order by:</strong>
+			<a href="../sortByrating/"> Rating </a> / 
+			<a href="../sortByratingsCount/"> Rating Count </a> /
+			<a href="../sortBypublishYear/"> Publish Year </a>
+		</p>
+	</div>
+	<div class="main">
+		<div class="sort_list">
+			<ol>
+			{% for i in BookList %}
+				<li>
+					<div class="book_cover">
+						<img src={{i.img_url}}>
+					</div>
+					<div class="book_info">
+						<span class="title">&nbsp{{ i.title }}</span><br>
+						&nbspby<span class="author">&nbsp{{ i.author }}</span><br><br>
+						<span class="rating">
+							&nbspRating:&nbsp{{ i.rating }}
+						</span>
+						<br>
+						<span class="ratingC">&nbsp{{ i.ratingsCount }}&nbspratings</span><br>
+						<span class="Pyear">&nbsppublished&nbsp{{ i.publish_year }}</span><br>
+					</div>
+				</li>
+			{% endfor %}
+			</ol>
+		</div>
+		<em>* All books data from: <a href="https://www.goodreads.com/">Goodreads</a> (https://www.goodreads.com/)</em>
+		<div class="load_more">
+			<strong>Load More . . .</strong>
+		</div>
+	</div>
+	<div class="footer">
+		<p>Copyright@2018, Wei Ma, All Rights Reserved.<p>
+	</div>
+</body>
+</html>

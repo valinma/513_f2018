@@ -1,0 +1,118 @@
+<!-- coding:utf-8 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BookSort</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'sort/style.css' %}">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        var x=0;
+        function checkRight(){
+            x=1;
+            document.getElementById('all').value = x;
+            document.getElementById('button').value = 'No more books';
+        }
+        $(window).scroll(function(){
+            var $document = $(document).scrollTop()
+            if ($document > 75 && $document < $(window).height()){
+                $("#fixed").addClass("top-nav");
+                $('div.go-top').show();
+            }else if($document < 75){
+                $("#fixed").removeClass("top-nav");
+                $('div.go-top').hide();
+            }
+        })
+    </script>
+    <style>
+        .stars-bg{
+            position: relative;
+            display: inline-block;
+            height: 20px;
+            width: 113px;
+            background: url({% static 'sort/evaluate2.png' %}) 0 0;
+        }
+        .star-active{
+            position: absolute;
+            left: 1px;
+            top: 0;
+            display: block;
+            height: 100%;
+            background: url({% static 'sort/evaluate22.png' %}) 0 -20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="top" class="top">
+        <a href="../../">
+            <p>Book Sorting</p>
+        </a>
+    </div>
+    <div id="fixed" class="sort_button">
+        <span>
+            <strong> Genre: </strong>
+            <a href="/Biography/sortByrating/"> Biography </a> / 
+            <a href="/Fiction/sortByrating/"> Fiction </a> / 
+            <a href="/Classics/sortByrating/"> Classics </a>
+        </span>
+        <p>
+            <strong>Order by:</strong>
+            <a href="../sortByrating/"> Rating </a> / 
+            <a href="../sortByratingsCount/"> Rating Count </a> /
+            <a href="../sortBypublishYear/"> Publish Year </a>
+        </p>
+    </div>
+    <div class="main">
+        <div id="sort_rating_list" class="sort_list">
+            <ol>
+            {% for i in BookList %}
+                <li>
+                    <div class="book_cover">
+                        <a href="{{i.link}}">
+                            <img src={{i.img_url}}>
+                        </a>
+                    </div>
+                    <div class="book_info">
+                        <a href="{{i.link}}">
+                            <span class="title">&nbsp{{ i.title }}</span><br>
+                        </a>
+                        &nbspby<span class="author" style="font-weight: 600;">&nbsp{{ i.author }}</span><br><br>
+                        <span class="rating">
+                        	&nbspRating:&nbsp
+                        	<span class="stars-bg">
+					            <!-- 宽度由实际数据自行计算 如4.2/5*100% -->
+					            <i class="star-active" style="width: calc({{ i.rating }}/5*100%)"></i>
+					        </span>
+                            <i style="color: #857866; font-weight: 600; font-size: 18px;">&nbsp&nbsp{{ i.rating }}</i>
+                        </span>
+                        <br>
+                        <br>
+                        <span class="ratingC"><i style="color: #857866; font-weight: 600; font-size: 18px;">&nbsp{{ i.ratingsCount }}</i>&nbspratings</span><br><br>
+                        <span class="Pyear">&nbsppublished&nbsp<i style="color: #857866; font-weight: 600; font-size: 18px;">{{ i.publish_year }}</i></span><br>
+                    </div>
+                </li>
+            {% endfor %}
+            </ol>
+        </div>
+        <em>* All books data from: <a href="https://www.goodreads.com/">Goodreads</a> (https://www.goodreads.com/)</em>
+        <div id="more" class="load_more">
+            <form method="get">
+                <input type="text" id="all" name="all" style="display: none;"/>
+                <button type="submit" id="button" onclick="checkRight()">
+                    <span>Load All</span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <a href="#top">
+        <div class="go-top">
+            <div class="arrow"></div>
+            <div class="stick"></div>
+            <span>Back Top</span>
+        </div>
+    </a>
+    <div class="footer">
+        <p style="cursor: default;">Copyright@2018, Wei Ma, All Rights Reserved.<p>
+    </div>
+</body>
+</html> 

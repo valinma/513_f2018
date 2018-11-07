@@ -1,0 +1,38 @@
+<!-- coding:utf-8 -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BookSort</title>
+	{% load static %}
+	<link rel="stylesheet" type="text/css" href="{% static 'sort/style.css' %}">
+</head>
+<body>
+	<div class="top">
+		<a href="../">
+			<p>Book Sorting</p>
+		</a>
+	</div>
+	<div class="sort_button">
+		<span>
+			<strong> Tag: </strong>
+			<a href="#"> Biography </a>
+		</span>
+		<p>
+			<strong>Order by:</strong>
+			<a href="../sortByrating/"> Rating </a> / 
+			<a href="#"> Rating Count </a> /
+			<a href="#"> Publish Year</a>
+		</p>
+	</div>
+	<div class="main">
+		<div class="sort_list">
+			<ul>
+			{% for i in BookList %}
+				<li>{{ i }}</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+<br>
+</body>
+</html>
