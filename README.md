@@ -36,3 +36,7 @@ Week 7 (2018/10/30):
 Week 8 (2018/11/06):
 
     Report:https://www.cs.uml.edu/~wma/513_f2018/Week_8_Report.pdf
+    
+Week 9 (2018/11/13):
+
+    Report:https://www.cs.uml.edu/~wma/513_f2018/Week_9_Report.pdf
