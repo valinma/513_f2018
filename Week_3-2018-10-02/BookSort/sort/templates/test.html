@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    function showTooltip(target) {  
+        document.getElementById(target.id.replace(/^label/,'tooltip')).style.display = 'block';  
+    }  
+    function hideTooltip(target) {  
+        document.getElementById(target.id.replace(/^label/,'tooltip')).style.display = 'none';  
+    }
+</script>
+</head>
+<body>
+    <label onmouseover='showTooltip(this);' onmouseout='hideTooltip(this);' id='label0'>把鼠标移到我上面看看...</label>
+    <label onmouseover='showTooltip(this);' onmouseout='hideTooltip(this);' id='label1'>把鼠标移到我上面看看...</label>
+    <div id='tooltip0' style='display:none;border:1px solid gray;background-color:yellow;color:blue;'><p>这是一段文字的详细信息</p></div>
+    <div id='tooltip1' style='display:none;border:1px solid gray;background-color:yellow;color:blue;position: relative;left: 100px; top: 0;'><p>这是一段文字的详细信息</p></div>
+</body>
+</html>
