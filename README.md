@@ -7,7 +7,8 @@ To see the website of my project, please click the link of "BookSort", which is:
 
 To specify the report of each week, I make a summary below:
 
-Week 1 (2018/09/18) -- I did not have any idea for my project, so I did not write a report:
+Week 1 (2018/09/18) -- I did some search on the Internet and think the topic I want to focus:
+    Report:https://www.cs.uml.edu/~wma/513_f2018/Week_1_Report.pdf
 
 Week 2 (2018/09/25) -- I came up with an idea to do "BookSort":
 
