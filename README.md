@@ -50,3 +50,7 @@ Week 10 (2018/11/20):
 Week 11 (2018/11/27):
 
     Report:https://www.cs.uml.edu/~wma/513_f2018/Week_11_Report.pdf
+    
+Week 12 (2018/12/04):
+
+    Report:https://www.cs.uml.edu/~wma/513_f2018/Week_12_Presentation.pptx
